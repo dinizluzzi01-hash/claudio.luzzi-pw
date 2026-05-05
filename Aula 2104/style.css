@@ -1,0 +1,78 @@
+/* Reset básico */
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+/* Corpo da página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+/* cabeçalho */
+header {
+    background-color: #333;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+/* Menu */
+nav ul{
+    list-style: none;
+    margin-top: 10px;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Conteúdo */
+main {
+ padding: 20px;
+ }
+
+ /* Rodapé */
+ footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+ }
+ /* Galeria de imagens */
+.galeria {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.container-imagens {
+    display: flex;
+    justify-content: center; /* centraliza horizontal */
+    gap: 20px; /* espaço entre imagens */
+    margin-top: 20px;
+}
+
+.container-imagens img {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px; /* cantos arredondados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* sombra bonita */
+    transition: transform 0.3s;
+}
+
+/* efeito ao passar o mouse */
+.container-imagens img:hover {
+    transform: scale(1.05);
+}
