@@ -1,0 +1,242 @@
+/* ==========================================================================
+   1. IMPORTAÇÃO DE FONTE E RESET
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f4f6f9;
+}
+
+/* ==========================================================================
+   2. CONTAINER E CABEÇALHO
+   ========================================================================== */
+.container {
+  width: 90%;
+  max-width: 900px;
+  height: 80vh;
+  border-radius: 12px;
+  background-color: #ffffff;
+  padding: 30px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eef2f5;
+  margin-bottom: 20px;
+}
+
+.header span {
+  font-size: 22px;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+/* Botão Incluir */
+#new {
+  font-size: 14px;
+  font-weight: 500;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  color: #ffffff;
+  background-color: #6c5ce7;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+#new:hover {
+  background-color: #5b4bc4;
+}
+
+#new:active {
+  transform: scale(0.98);
+}
+
+/* ==========================================================================
+   3. TABELA DE FUNCIONÁRIOS
+   ========================================================================== */
+.divTable {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+}
+
+table {
+  width: 100%;
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+thead th {
+  position: sticky;
+  top: 0;
+  background-color: #f8f9fa;
+  color: #6c757d;
+  padding: 12px 15px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 13px;
+  text-transform: uppercase;
+  border-bottom: 2px solid #eef2f5;
+}
+
+tbody tr {
+  border-bottom: 1px solid #f1f3f5;
+  transition: background-color 0.2s ease;
+}
+
+tbody tr:hover {
+  background-color: #f8f9fa;
+}
+
+tbody td {
+  padding: 14px 15px;
+  color: #333333;
+  font-size: 14px;
+}
+
+/* Ações (Ajuste dos Ícones Editar e Excluir) */
+td.acao, th.acao {
+  width: 60px;
+  text-align: center;
+}
+
+tbody td button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: transform 0.1s ease;
+}
+
+tbody td button:hover {
+  transform: scale(1.15);
+}
+
+tbody td .bx-edit {
+  color: #0984e3;
+}
+
+tbody td .bx-trash {
+  color: #d63031;
+}
+
+/* ==========================================================================
+   4. MODAL (ESTRUTURA ESSENCIAL PARA FUNCIONAR)
+   ========================================================================== */
+.modal-container {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none; /* Escondido por padrão */
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+/* ESTA É A REGRA QUE FAZ O JS MOSTRAR O FORMULÁRIO AO CLICAR EM INCLUIR */
+.modal-container.active {
+  display: flex !important;
+}
+
+.modal {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.modal label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #495057;
+  margin-top: 5px;
+}
+
+.modal input {
+  width: 100%;
+  outline: none;
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: 1px solid #ced4da;
+  font-size: 14px;
+  transition: border-color 0.2s;
+}
+
+.modal input:focus {
+  border-color: #6c5ce7;
+}
+
+#btnSalvar {
+  margin-top: 15px;
+  padding: 12px;
+  border-radius: 6px;
+  border: none;
+  color: #ffffff;
+  background-color: #00b894;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+#btnSalvar:hover {
+  background-color: #00a181;
+}
+
+/* ==========================================================================
+   5. RESPONSIVIDADE
+   ========================================================================== */
+@media (max-width: 600px) {
+  .container {
+    width: 95%;
+    padding: 15px;
+  }
+  
+  .header span {
+    font-size: 18px;
+  }
+}
